@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+        .jumbotron-image {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron text-center jumbotron-image text-white shadow"
+        style="background-image: url(https://mcdn.wallpapersafari.com/medium/8/39/50Fdz7.jpg);">
+        <h1>Welcome to Diabetes Prediction Application</h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Kindly fill out the below form and press submit to see the results</h4>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-center"><h1>{{predicts}}</h1></div>
+            <form action="/send" method="POST">
+                <div class="form-group col-md-4">
+                    <label for="preg">
+                        Number of pregnencies</br>
+                        (Enter 0 if none):
+                    </label>
+                    <input type="number" class="form-control" id="preg" name="preg" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="glucose">Glucose Level:</label>
+                    <input type="number" class="form-control" id="glucose" name="glucose" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="bp">BP:</label>
+                    <input type="number" class="form-control" id="bp" name="bp" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="skinfold">Skinfold Measurement:</label>
+                    <input type="number" class="form-control" id="skinfold" name="skinfold" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="insulin">Insulin Level:</label>
+                    <input type="number" class="form-control" id="insulin" name="insulin" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="bmi">Body Mass Index(BMI):</label>
+                    <input type="number" class="form-control" id="bmi" name="bmi" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="pedigree">Pedigree:</label>
+                    <input type="number" class="form-control" id="pedigree" name="pedigree" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
